@@ -658,3 +658,102 @@ insert into provee(id_Producto, id_Proveedor, cantidad) values
 (36, 204, 100),
 (37, 205, 30);
 
+
+-- ABRAHAM
+
+#persona
+
+insert into persona(ci, nombres, apepaterno, apematerno, sexo, fecha_de_nacimiento, correo, telefono) values
+(9992885, 'Carla Cecilia', 'Ramos', 'Frias', 'F', '1998-11-20', 'carlaceci@gmail.com', 68123465),
+(8234567, 'Marcio Adrian', 'Flores', 'Medrano', 'M', '2000-07-30', 'marcioadri@gmail.com', 72354891),
+(9832342, 'Kamila Grisly', 'Zeballos', 'Lujan', 'F', '2001-03-11', 'griskm@gmail.com', 72070538),
+(2345678, 'Fabian', 'Oña', 'Pelaez', 'M', '2001-06-16', 'fabip@gmail.com', 72389367),
+(7374234, 'Lucia Belen', 'Zeballos', 'Torrez', 'F', '1999-10-31', 'luuuzeb@gmail.com', 65598150),
+(1234569, 'Gerardo', 'Mercado', 'Castillo', 'M', '2001-01-20', 'yeraldox@gmail.com', 69733465),
+(9992990, 'Mateo', 'Ramos', 'Frias', 'M', '1990-10-27', 'mateomagno@gmail.com', 69966394),
+(9813456, 'Nao', 'Tomori', 'Marcel', 'F', '2001-05-15', 'naotomori@gmail.com', 69781375);
+
+#medico
+insert into medico(ciMedico, especialidad, sueldo) values
+(9832342, 'Bienestar Animal', 6000),
+(2345678, 'Cuidados Criticos', 8000),
+(1234569, 'Ortopedia Veterinaria', 8000),
+(9813456, 'Fisioterapia', 5000);
+
+#dueño
+insert into dueño(ciDueño, direccion) values
+(7374234, 'Calle Retamas #15'),
+(9832342, 'Calle Levy #5'),
+(9992885, 'Calle Reseguin #2039'),
+(8234567, 'Las Lomas #21'),
+(9992990, 'Av. Arce #23');
+
+#mascota
+insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
+(1001, 'Spiky', 'perro', 'chapi', '2015-03-11', 9832342),
+(1002, 'Sherkan', 'gato', 'persa', '2019-10-01', 7374234),
+(1003, 'Alvin', 'perro', 'golden retriever', '2010-07-10', 9992885),
+(1004, 'Perlita', 'perro', 'husky', '2018-11-10', 8234567),
+(1005, 'misifus', 'gato', 'persa', '2021-03-16', 9992990);
+
+
+#atiende
+insert into atiende(idMascota, ciMedico) values
+(1001, 9832342),
+(1005, 1234569),
+(1004, 2345678),
+(1003, 9813456),
+(1002, 9813456);
+
+#asigna
+insert into asigna(idMascota, ciMedico, id_Diagnostico) values
+(1001, 9832342, 1010),
+(1005, 1234569, 1011),
+(1004, 2345678, 1012),
+(1003, 9813456, 1013),
+(1002, 9813456, 1014);
+
+#diagnostico
+insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
+(1010, '2023-03-15', 'Mascota en buen estado', 'Revison mensual de manera general de la mascota', 'Mantener el estilo de vida de la mascota'),
+(1011, '2023-04-21', 'Fractura de la pata trasera derecha', 'Se le receto una crema desinflamante y reposo', 'Traer para revision en 2 dias'),
+(1012, '2022-05-16', 'Daño en todo el cuerpo', 'Se interno para mantenerlo en observaciones, cuidado intensivo', 'Mantener en observacion'),
+(1013, '2022-05-22', 'Movilidad Reducida', 'Mejoramiento de la dieta y ejercicios para mejorar fisico', 'Observacion constante'),
+(1014, '2022-07-15', 'Lesion en pata trasera', 'Se aplicaran sesiones de fisioterapia par mejorar', 'Cita de control semanal');
+
+
+#receta
+insert into receta(id_Diagnostico, id_Producto) values
+(1010, 256),
+(1011, 252),
+(1012, 258),
+(1013, 254),
+(1014, 257);
+
+#producto
+insert into producto(id_Producto, nombre, descripcion, precio, stock) values
+(251, 'Gotas para el oído', 'Medicamento para tratar otitis', 15, 100),
+(252, 'Crema desinflamante', 'Crema para tratar picaduras de insectos', 12.50, 75),
+(253, 'Pastillas para la gastritis', 'Medicamento para tratar gastritis', 9, 50),
+(254, 'Comida especial para dieta', 'Comida para perros con sobrepeso', 22, 30),
+(255, 'Shampoo para mantos delicados', 'Shampoo para tratar dermatitis atópica', 8, 40),
+(256, 'Suplemento mensual', 'Suplemento nutricional mensual', 30, 150),
+(257, 'Sesión de fisioterapia', 'Sesión de fisioterapia para lesiones', 45, 20),
+(258, 'Cuidado intensivo', 'Cuidado intensivo en hospital veterinario', 150, 10);
+
+#proveedor
+insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
+(406, 'Farmacia Veterinaria D', '2416379', 'info@farmaciaveterinariaD.com'),
+(407, 'Centro de Fisioterapia Animal', '2602378', 'info@fisioterapiaanimal.com'),
+(408, 'Hospital Veterinario XYZ', '2706013', 'info@hospitalveterinarioxyz.com');
+
+#provee
+insert into provee(id_Producto, id_Proveedor, cantidad) values
+(251, 406, 200),
+(252, 406, 100),
+(253, 406, 300),
+(254, 406, 50),
+(255, 406, 100),
+(256, 406, 50),
+(257, 407, 15),
+(258, 408, 5);
