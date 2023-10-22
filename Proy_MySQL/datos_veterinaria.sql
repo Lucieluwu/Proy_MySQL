@@ -245,7 +245,7 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 (31, 1020507, 214),
 (32, 2304896, 212),
 (33, 2304896, 213),
-(35, 1020507, 211),
+(30, 1020507, 211),
 (34, 2304896, 215);
 
 #producto
@@ -343,7 +343,7 @@ insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, trata
 (245, '2023-02-15', 'Dolor estomaca', 'Antiácidos y descanso', 'Mantener al animal en reposo'),
 (246, '2023-03-13', 'Analisis', 'Extraccion de sangre', 'Los resultados seran entregados en 24 horas'),
 (247, '2022-02-16', 'Resfriado', 'Antibióticos y descanso', 'Administrar antibióticos según las indicaciones del veterinario'),
-(248, '2022-06-121', 'Resfriado', 'Se le dio antihistaminicos', 'El paciente volverá en una semana'),
+(248, '2022-06-12', 'Resfriado', 'Se le dio antihistaminicos', 'El paciente volverá en una semana'),
 (249, '2022-07-17', 'Obesidad', 'Control de la alimentacion ', 'Reducir la cantidad de comida');
 
 
@@ -414,20 +414,20 @@ insert into dueño(ciDueño, direccion) values
 
 #mascota
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(36, 'Yogui', 'Perro', 'Mestizo', '2021-11-10', 2536993),
-(37, 'Perla', 'Perro', 'Pitbul', '2010-07-21', 2664223),
-(38, 'Bobi', 'Perro', 'Chihuahua', '2022-03-12', 2415428),
-(39, 'Copito', 'Gato', 'Siberiano', '2019-11-23', 2567457),
-(40, 'Sussy', 'Gato', 'Maine Coon', '2023-01-20', 2536993);
+(40, 'Yogui', 'Perro', 'Mestizo', '2021-11-10', 2536993),
+(41, 'Perla', 'Perro', 'Pitbul', '2010-07-21', 2664223),
+(42, 'Bobi', 'Perro', 'Chihuahua', '2022-03-12', 2415428),
+(43, 'Copito', 'Gato', 'Siberiano', '2019-11-23', 2567457),
+(44, 'Sussy', 'Gato', 'Maine Coon', '2023-01-20', 2536993);
 
 
 #atiende
 insert into atiende(idMascota, ciMedico) values
-(36, 2431234),
-(37, 2431234),
-(38, 2567457),
-(39, 2415428),
-(40, 2567457);
+(40, 2431234),
+(41, 2431234),
+(42, 2567457),
+(43, 2415428),
+(44, 2567457);
 
 #diagnostico
 insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
@@ -435,16 +435,16 @@ insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, trata
 (217, '2023-03-10', 'Alergia a las pulgas', 'Tratamiento antipulgas, medicamentos antihistamínicos y champú especial', 'Se aconseja al dueño sobre la prevención de pulgas y cuidados continuos de la piel'),
 (218, '2023-04-15', 'Radiografía que revela una fractura en la pata trasera del perro', 'Reducción de la fractura y colocación de un yeso', 'El propietario debe restringir la actividad del perro durante la recuperación '),
 (219, '2023-04-21', 'Análisis de orina muestra cristales en la orina del gato', 'Cirugía de extirpación y radioterapia', 'Se recomienda una dieta específica y se programan chequeos regulares'),
-(220, '2023-05-13', 'Alergia a las pulgas', 'Tratamiento antipulgas, medicamentos antihistamínicos y champú especial', 'Se aconseja al dueño sobre la prevención de pulgas y cuidados continuos de la piel'),;
+(220, '2023-05-13', 'Alergia a las pulgas', 'Tratamiento antipulgas, medicamentos antihistamínicos y champú especial', 'Se aconseja al dueño sobre la prevención de pulgas y cuidados continuos de la piel');
 
 
 #asigna
 insert into asigna(idMascota, ciMedico, id_Diagnostico) values
-(36, 2431234, 217),
-(37, 2431234, 218),
-(38, 2567457, 220),
-(39, 2415428, 216),
-(40, 2567457, 219);
+(40, 2431234, 217),
+(41, 2431234, 218),
+(42, 2567457, 220),
+(43, 2415428, 216),
+(44, 2567457, 219);
 
 #producto
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
@@ -466,19 +466,19 @@ insert into receta(id_Diagnostico, id_Producto) values
   
 #proveedor
 insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
-(169, 'Veterquimica Bolivia', 78876534, 'veterquimBol@gmail.com'),
-(170, 'Agrovet Market', 65764564, 'AgrovetMarket@gmail.com'),
-(171, 'AnimaLove', 77857645, 'AnimaLove@gmail.com'),
-(172, 'Faunamed', 66236475, 'Faunamed@gmail.com');
+(176, 'Veterquimica Bolivia', 78876534, 'veterquimBol@gmail.com'),
+(177, 'Agrovet Market', 65764564, 'AgrovetMarket@gmail.com'),
+(178, 'AnimaLove', 77857645, 'AnimaLove@gmail.com'),
+(179, 'Faunamed', 66236475, 'Faunamed@gmail.com');
 
 
 #provee
 insert into provee(id_Producto, id_Proveedor, cantidad) values
-(24, 169, 60),
-(25, 170, 40),
-(26, 171, 95),
-(27, 172, 70),
-(28, 115, 80);   
+(24, 176, 60),
+(25, 177, 40),
+(26, 178, 95),
+(27, 179, 70),
+(28, 115, 80);    
 
 # datos a insertar
 # ALEXIS
@@ -498,7 +498,7 @@ insert into medico(ciMedico, especialidad, sueldo) values
 (1234567, 'Dermatología Veterinaria', 4800),
 (7654321, 'Cirugia Veterinaria', 5800),
 (9876543, 'Cardiología Veterinaria', 5200),
-(5555555, 'Oncología Veterinaria', 5000),
+(5555555, 'Oncología Veterinaria', 5000);
 
 insert into dueño(ciDueño, direccion) values
 (8888888, 'Calle 123 #456'),
@@ -508,18 +508,18 @@ insert into dueño(ciDueño, direccion) values
 (1234568, 'Calle Comercio #1234');
 
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(26, 'Max', 'Perro', 'Golden Retriever', '2018-04-10', 8888888),
-(27, 'Mia', 'Gato', 'Siamés', '2020-02-15', 9876540),
-(28, 'Rocky', 'Perro', 'Labrador', '2017-07-20', 5555556),
-(29, 'Bella', 'Gato', 'Persa', '2019-10-05', 8888889),
-(40, 'Lucy', 'Perro', 'Poodle', '2016-06-30', 1234568);
+(45, 'Max', 'Perro', 'Golden Retriever', '2018-04-10', 8888888),
+(46, 'Mia', 'Gato', 'Siamés', '2020-02-15', 9876540),
+(47, 'Rocky', 'Perro', 'Labrador', '2017-07-20', 5555556),
+(48, 'Bella', 'Gato', 'Persa', '2019-10-05', 8888889),
+(49, 'Lucy', 'Perro', 'Poodle', '2016-06-30', 1234568);
 
 insert into atiende(idMascota, ciMedico) values
-(26, 1234567),
-(27, 7654321),
-(28, 9876543),
-(29, 5555555),
-(40, 5555555);
+(45, 1234567),
+(46, 7654321),
+(47, 9876543),
+(48, 5555555),
+(49, 5555555);
 
 insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
 (221, '2023-08-10', 'Fractura de pata', 'Inmovilización y seguimiento radiográfico', 'Revisión en 6 semanas'),
@@ -529,11 +529,11 @@ insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, trata
 (225, '2023-09-21', 'Problemas de comportamiento', 'Entrenamiento y terapia conductual', 'Revisión en 8 semanas para evaluar el progreso');
 
 insert into asigna(idMascota, ciMedico, id_Diagnostico) values
-(26, 1234567, 221),
-(27, 7654321, 222),
-(28, 9876543, 223),
-(29, 5555555, 224),
-(40, 5555555, 225);
+(45, 1234567, 221),
+(46, 7654321, 222),
+(47, 9876543, 223),
+(48, 5555555, 224),
+(49, 5555555, 225);
 
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
 (50, 'Antibiótico', 'Medicamento antibiótico de amplio espectro', 15.99, 50),
@@ -574,7 +574,7 @@ insert into persona(ci, nombres, apepaterno, apematerno, sexo, fecha_de_nacimien
 (6962120, 'Erika Cecilia', 'Averanga', 'Ali', 'F', '2000-06-10', 'ceci16@gmail.com', 68095331),
 (4984222, 'Valerio Vidal', 'Ramos', 'Uyuli', 'M', '1998-12-25', 'valvid45@gmail.com', 72549833),
 (3358411, 'Carlos Lorenzo', 'Ayare', 'Orellana', 'M', '1999-09-09', 'carloren123gmail.com', 74829116),
-(5291354, 'Carmen Rosa', 'Lizarazu', 'Padilla', 'F', '1997-01-42', 'rosita456@gmail.com', 68099426),
+(5291354, 'Carmen Rosa', 'Lizarazu', 'Padilla', 'F', '1997-01-24', 'rosita456@gmail.com', 68099426),
 (3045707, 'Nilo Justiniano', 'Suxo', 'Nina', 'M', '1999-11-03', 'justinil888@gmail.com', 71244212),
 (1276183, 'Fernando', 'Paucara', 'Perez', 'M', '1998-03-19', 'pepefer@gmail.com', 78644561),
 (8793155, 'Lourdes Diana', 'Mendez', 'Duran', 'F', '2001-01-16', 'lulidi1@gmail.com', 67430101);
@@ -629,21 +629,22 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 (58, 3358411, 554),
 (59, 1276183, 555);
 
+
 #producto
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
-(33, 'EasOtic', 'Gotas para la otitits', 100, 5),
-(34, 'Inflavet', 'Crema desinflamante', 40.99, 23),
-(35, 'Famotidina', 'Pastillas para la gastritis', 2.50, 100),
-(36, 'Proplan Bajo Calorias Optifi', 'Croquetas 50 kg', 150.03, 7),
-(37, 'Tacrolimus', 'Crema para la dermatitis atopica', 239.99, 20);
+(55, 'EasOtic', 'Gotas para la otitits', 100, 5),
+(56, 'Inflavet', 'Crema desinflamante', 40.99, 23),
+(57, 'Famotidina', 'Pastillas para la gastritis', 2.50, 100),
+(58, 'Proplan Bajo Calorias Optifi', 'Croquetas 50 kg', 150.03, 7),
+(59, 'Tacrolimus', 'Crema para la dermatitis atopica', 239.99, 20);
 
 #receta
 insert into receta(id_Diagnostico, id_Producto) values
-(551, 33),
-(552, 34),
-(553, 35),
-(554, 36),
-(555, 37);
+(551, 55),
+(552, 56),
+(553, 57),
+(554, 58),
+(555, 59);
 
 
 #proveedor
@@ -656,11 +657,11 @@ insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
 
 #provee
 insert into provee(id_Producto, id_Proveedor, cantidad) values
-(33, 201, 50),
-(34, 202, 10),
-(35, 203, 40),
-(36, 204, 100),
-(37, 205, 30);
+(55, 201, 50),
+(56, 202, 10),
+(57, 203, 40),
+(58, 204, 100),
+(59, 205, 30);
 
 
 -- ABRAHAM
