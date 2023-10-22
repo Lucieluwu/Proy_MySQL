@@ -13,14 +13,14 @@ insert into persona(ci, nombres, apepaterno, apematerno, sexo, fecha_de_nacimien
 (1321112, 'Nikita', 'Solares', 'Cruz', 'F', '1992-04-22', 'nikitasol7@gmail.com', 69977092),
 (3216513, 'Joey', 'Jay', 'Jones', 'M', '1985-04-28', 'joey_j@gmail.com', 71932231),
 (1328114, 'Jaime', 'Cruz', 'Justino', 'M', '2002-05-22', 'jaimitocruz@gmail.com', 76767678),
-(4132111, 'Micaela', 'Kunta', 'Loza', 'F', '2000-05-26', 'mica_kunta@gmail.com', 78768773);
+(4132111, 'Micaela', 'Kunta', 'Loza', 'F', '2000-05-26', 'mica_kunta@gmail.com', 78768773),
 (2122121, 'Dilan', 'Romero', 'Lozano', 'M', '2003-07-16', 'dilan_r@gmail.com', 76167273);
 
 #medico
 insert into medico(ciMedico, especialidad, sueldo) values
 (2111111, 'Oncología Veterinaria', 4000),
-(2211161, 'Cirugia Veterinaria', 6000);
-(3215511, 'Radiologia Veterinaria', 6000);
+(2211161, 'Cirugia Veterinaria', 6000),
+(3215511, 'Radiologia Veterinaria', 6000),
 (3216513, 'Medicina Interna', 5000);
 
 #dueño
@@ -31,7 +31,15 @@ insert into dueño(ciDueño, direccion) values
 (1321112, 'Av. Arce'),
 (2211161, 'Calle comercio #132');
 
-####-
+#mascota
+insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
+(22, 'sol', 'perro', 'sharpey', '2022-08-13', 1328114),
+(21, 'mandarino', 'gato', 'mestizo', '2015-11-11', 4132111),
+(23, 'milaneso', 'gato', 'mestizo', '2019-01-16', 2122121),
+(24, 'indestrutible', 'gato', 'mestizo', '2019-02-24', 3215511),
+(25, 'porkito', 'cobaya', 'coronet', '2021-06-13', 2211161);
+
+
 #atiende
 insert into atiende(idMascota, ciMedico) values
 (22, 2111111),
@@ -40,14 +48,14 @@ insert into atiende(idMascota, ciMedico) values
 (25, 3215511),
 (24, 3216513);
 
-#mascota
-insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(22, 'sol', 'perro', 'sharpey', '2022-08-13', 1328114),
-(21, 'mandarino', 'gato', 'mestizo', '2015-11-11', 4132111),
-(23, 'milaneso', 'gato', 'mestizo', '2019-01-16', 2122121),
-(24, 'indestrutible', 'gato', 'mestizo', '2019-02-24', 3215511),
-(25, 'porkito', 'cobaya', 'coronet', '2021-06-13', 2211161);
-####-
+
+#diagnostico
+insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
+(200, '2023-02-14', 'Obesidad', 'Implementación de una dieta y programa de ejercicios', 'Cita de control en dos semanas'),
+(201, '2023-03-13', 'Analisis', 'Extraccion de sangre', 'Los resultados seran entregados en 24 horas'),
+(202, '2022-05-12', 'Resfriado', 'Tratamiento con antiviral', 'Dar medicamento dos veces al dia cada ocho horas'),
+(203, '2022-06-17', 'Alergia', 'Se le dio antihistaminicos', 'El paciente volverá en una semana'),
+(204, '2022-07-19', 'Dolor estomacal', 'Se le dio un laxante', 'El dueño debe observalo');
 
 #asigna
 insert into asigna(idMascota, ciMedico, id_Diagnostico) values
@@ -57,14 +65,13 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 (24, 3216513, 201),
 (22, 2111111, 200);
 
-#diagnostico
-insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
-(200, '2023-02-14', 'Obesidad', 'Implementación de una dieta y programa de ejercicios', 'Cita de control en dos semanas'),
-(201, '2023-03-13', 'Analisis', 'Extraccion de sangre', 'Los resultados seran entregados en 24 horas'),
-(202, '2022-05-12', 'Resfriado', 'Tratamiento con antiviral', 'Dar medicamento dos veces al dia cada ocho horas'),
-(203, '2022-06-17', 'Alergia', 'Se le dio antihistaminicos', 'El paciente volverá en una semana'),
-(204, '2022-07-19', 'Dolor estomacal', 'Se le dio un laxante', 'El dueño debe observalo');
-###-
+#producto
+insert into producto(id_Producto, nombre, descripcion, precio, stock) values
+(11, 'Antiviral para gatos', 'Famciclovir', 70.99, 20),
+(12, 'Pelota de goma', 'Pelota de goma para perros', 15.99, 15),
+(13, 'Juguete de ratón', 'Juguete de peluche con sonido', 11.99, 75),
+(14, 'Pasto para gatos', 'Semillas de trigo para plantar', 30.03, 10),
+(15, 'Comida dietica para perro', 'Royal Canin Veterinary Diet 3kg', 124.99, 6);
 
 #receta
 insert into receta(id_Diagnostico, id_Producto) values
@@ -74,13 +81,6 @@ insert into receta(id_Diagnostico, id_Producto) values
 (204, 14),
 (200, 15);
 
-#producto
-insert into producto(id_Producto, nombre, descripcion, precio, stock) values
-(11, 'Antiviral para gatos', 'Famciclovir', 70.99, 20),
-(12, 'Pelota de goma', 'Pelota de goma para perros', 15.99, 15),
-(13, 'Juguete de ratón', 'Juguete de peluche con sonido', 11.99, 75),
-(14, 'Pasto para gatos', 'Semillas de trigo para plantar', 30.03, 10),
-(15, 'Comida dietica para perro', 'Royal Canin Veterinary Diet 3kg', 124.99, 6);
 
 #proveedor
 insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
@@ -248,6 +248,17 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 (35, 1020507, 211),
 (34, 2304896, 215);
 
+#producto
+insert into producto(id_Producto, nombre, descripcion, precio, stock) values
+(16, 'Antiinflamatorio', 'Medicamento para reducir la inflamación', 25.99, 100),
+(17, 'Analgésico', 'Medicamento para el alivio del dolor', 15.50, 150),
+(18, 'Diurético', 'Medicamento para la insuficiencia cardíaca', 30.25, 75),
+(19, 'Antiepiléptico', 'Medicamento para controlar las convulsiones', 35.75, 90),
+(20, 'Monitor de Epilepsia', 'Dispositivo para monitoreo', 100.00, 20),
+(21, 'Medicamento oncológico', 'Medicamento para el tratamiento del cáncer', 80.50, 30),
+(22, 'Antiarrítmico', 'Medicamento para problemas de ritmo cardíaco', 28.25, 80),
+(23, 'Medicamento para el dolor', 'Alivio del dolor para hernia de disco', 20.75, 70);
+
 #receta
 insert into receta(id_Diagnostico, id_Producto) values
 (210, 16),
@@ -260,16 +271,6 @@ insert into receta(id_Diagnostico, id_Producto) values
 (214, 22),
 (215, 23);
 
-#producto
-insert into producto(id_Producto, nombre, descripcion, precio, stock) values
-(16, 'Antiinflamatorio', 'Medicamento para reducir la inflamación', 25.99, 100),
-(17, 'Analgésico', 'Medicamento para el alivio del dolor', 15.50, 150),
-(18, 'Diurético', 'Medicamento para la insuficiencia cardíaca', 30.25, 75),
-(19, 'Antiepiléptico', 'Medicamento para controlar las convulsiones', 35.75, 90),
-(20, 'Monitor de Epilepsia', 'Dispositivo para monitoreo', 100.00, 20),
-(21, 'Medicamento oncológico', 'Medicamento para el tratamiento del cáncer', 80.50, 30),
-(22, 'Antiarrítmico', 'Medicamento para problemas de ritmo cardíaco', 28.25, 80),
-(23, 'Medicamento para el dolor', 'Alivio del dolor para hernia de disco', 20.75, 70);
   
 #proveedor
 insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
@@ -445,6 +446,14 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 (39, 2415428, 216),
 (40, 2567457, 219);
 
+#producto
+insert into producto(id_Producto, nombre, descripcion, precio, stock) values
+(24, 'Gotas Antibióticas', 'Oticas antibióticas para tratar la infección bacteriana en el oído de tu gato', 45.67, 70),
+(25, 'Analgesia', 'Aliviar el dolor y la incomodidad', 25.50, 150),
+(26, 'Antihistamínicos', 'Ayuda a aliviar los síntomas alérgicos en perros', 23.45, 45),
+(27, 'Antiinflamatorios no esteroides', 'Medicamentos como el carprofeno, el meloxicam o el firocoxib se utilizan para reducir la inflamación ', 27.50, 100),
+(28, 'Medicamentos antiinflamatorios', 'Si los cristales están causando irritación o inflamación en el tracto urinario del gato', 23.60, 50);
+
 #receta
 insert into receta(id_Diagnostico, id_Producto) values
 (216, 24),
@@ -454,13 +463,6 @@ insert into receta(id_Diagnostico, id_Producto) values
 (219, 28),
 (220, 26);
 
-#producto
-insert into producto(id_Producto, nombre, descripcion, precio, stock) values
-(24, 'Gotas Antibióticas', 'Oticas antibióticas para tratar la infección bacteriana en el oído de tu gato', 45.67, 70),
-(25, 'Analgesia', 'Aliviar el dolor y la incomodidad', 25.50, 150),
-(26, 'Antihistamínicos', 'Ayuda a aliviar los síntomas alérgicos en perros', 23.45, 45),
-(27, 'Antiinflamatorios no esteroides', 'Medicamentos como el carprofeno, el meloxicam o el firocoxib se utilizan para reducir la inflamación ', 27.50, 100),
-(28, 'Medicamentos antiinflamatorios', 'Si los cristales están causando irritación o inflamación en el tracto urinario del gato', 23.60, 50);
   
 #proveedor
 insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
@@ -591,14 +593,6 @@ insert into dueño(ciDueño, direccion) values
 (5291354, 'La Portada #555'),
 (3045707, 'Calle 23 de Clacoto #776');
 
-####-
-#atiende
-insert into atiende(idMascota, ciMedico) values
-(55, 3358411),
-(56, 8793155),
-(57, 1276183),
-(58, 3358411),
-(59, 1276183);
 
 #mascota
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
@@ -607,15 +601,16 @@ insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDue
 (57, 'coki', 'perro', 'border collie', '2023-05-05', 4984222),
 (58, 'chimera', 'perro', 'bichon maltes', '2021-07-10', 5291354),
 (59, 'lily', 'gato', 'persa', '2016-09-21', 3045707);
-####-
 
-#asigna
-insert into asigna(idMascota, ciMedico, id_Diagnostico) values
-(55, 3358411, 551),
-(56, 8793155, 552),
-(57, 1276183, 553),
-(58, 3358411, 554),
-(59, 1276183, 555);
+
+####-
+#atiende
+insert into atiende(idMascota, ciMedico) values
+(55, 3358411),
+(56, 8793155),
+(57, 1276183),
+(58, 3358411),
+(59, 1276183);
 
 #diagnostico
 insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
@@ -626,13 +621,13 @@ insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, trata
 (555, '2022-03-10', 'Dermatitis Atópica', 'Se le receto shampoo para mantos delicados', 'Cita de control en dos semanas');
 ###-
 
-#receta
-insert into receta(id_Diagnostico, id_Producto) values
-(551, 33),
-(552, 34),
-(553, 35),
-(554, 36),
-(555, 37);
+#asigna
+insert into asigna(idMascota, ciMedico, id_Diagnostico) values
+(55, 3358411, 551),
+(56, 8793155, 552),
+(57, 1276183, 553),
+(58, 3358411, 554),
+(59, 1276183, 555);
 
 #producto
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
@@ -641,6 +636,15 @@ insert into producto(id_Producto, nombre, descripcion, precio, stock) values
 (35, 'Famotidina', 'Pastillas para la gastritis', 2.50, 100),
 (36, 'Proplan Bajo Calorias Optifi', 'Croquetas 50 kg', 150.03, 7),
 (37, 'Tacrolimus', 'Crema para la dermatitis atopica', 239.99, 20);
+
+#receta
+insert into receta(id_Diagnostico, id_Producto) values
+(551, 33),
+(552, 34),
+(553, 35),
+(554, 36),
+(555, 37);
+
 
 #proveedor
 insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
@@ -705,13 +709,6 @@ insert into atiende(idMascota, ciMedico) values
 (1003, 9813456),
 (1002, 9813456);
 
-#asigna
-insert into asigna(idMascota, ciMedico, id_Diagnostico) values
-(1001, 9832342, 1010),
-(1005, 1234569, 1011),
-(1004, 2345678, 1012),
-(1003, 9813456, 1013),
-(1002, 9813456, 1014);
 
 #diagnostico
 insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
@@ -721,14 +718,13 @@ insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, trata
 (1013, '2022-05-22', 'Movilidad Reducida', 'Mejoramiento de la dieta y ejercicios para mejorar fisico', 'Observacion constante'),
 (1014, '2022-07-15', 'Lesion en pata trasera', 'Se aplicaran sesiones de fisioterapia par mejorar', 'Cita de control semanal');
 
-
-#receta
-insert into receta(id_Diagnostico, id_Producto) values
-(1010, 256),
-(1011, 252),
-(1012, 258),
-(1013, 254),
-(1014, 257);
+#asigna
+insert into asigna(idMascota, ciMedico, id_Diagnostico) values
+(1001, 9832342, 1010),
+(1005, 1234569, 1011),
+(1004, 2345678, 1012),
+(1003, 9813456, 1013),
+(1002, 9813456, 1014);
 
 #producto
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
@@ -740,6 +736,16 @@ insert into producto(id_Producto, nombre, descripcion, precio, stock) values
 (256, 'Suplemento mensual', 'Suplemento nutricional mensual', 30, 150),
 (257, 'Sesión de fisioterapia', 'Sesión de fisioterapia para lesiones', 45, 20),
 (258, 'Cuidado intensivo', 'Cuidado intensivo en hospital veterinario', 150, 10);
+
+
+#receta
+insert into receta(id_Diagnostico, id_Producto) values
+(1010, 256),
+(1011, 252),
+(1012, 258),
+(1013, 254),
+(1014, 257);
+
 
 #proveedor
 insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
