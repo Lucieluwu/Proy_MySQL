@@ -291,7 +291,7 @@ insert into provee(id_Producto, id_Proveedor, cantidad) values
 (22, 171, 70), -- de los datos de carlos el proveedor
 (23, 112, 200); -- de los datos de luz el proveedor
 
---LUIS
+-- LUIS
 
 #persona
 insert into persona(ci, nombres, apepaterno, apematerno, sexo, fecha_de_nacimiento, correo, telefono) values
