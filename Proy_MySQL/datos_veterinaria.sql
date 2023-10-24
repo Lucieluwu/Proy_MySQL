@@ -33,11 +33,11 @@ insert into dueño(ciDueño, direccion) values
 
 #mascota
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(22, 'sol', 'perro', 'sharpey', '2022-08-13', 1328114),
-(21, 'mandarino', 'gato', 'mestizo', '2015-11-11', 4132111),
-(23, 'milaneso', 'gato', 'mestizo', '2019-01-16', 2122121),
-(24, 'indestrutible', 'gato', 'mestizo', '2019-02-24', 3215511),
-(25, 'porkito', 'cobaya', 'coronet', '2021-06-13', 2211161);
+(22, 'sol', 'Perro', 'sharpey', '2022-08-13', 1328114),
+(21, 'mandarino', 'Gato', 'mestizo', '2015-11-11', 4132111),
+(23, 'milaneso', 'Gato', 'mestizo', '2019-01-16', 2122121),
+(24, 'indestrutible', 'Gato', 'mestizo', '2019-02-24', 3215511),
+(25, 'porkito', 'Cobaya', 'coronet', '2021-06-13', 2211161);
 
 
 #atiende
@@ -71,7 +71,7 @@ insert into producto(id_Producto, nombre, descripcion, precio, stock) values
 (12, 'Pelota de goma', 'Pelota de goma para perros', 15.99, 15),
 (13, 'Juguete de ratón', 'Juguete de peluche con sonido', 11.99, 75),
 (14, 'Pasto para gatos', 'Semillas de trigo para plantar', 30.03, 10),
-(15, 'Comida dietica para perro', 'Royal Canin Veterinary Diet 3kg', 124.99, 6);
+(15, 'Comida dietica para Perro', 'Royal Canin Veterinary Diet 3kg', 124.99, 6);
 
 #receta
 insert into receta(id_Diagnostico, id_Producto) values
@@ -150,11 +150,11 @@ insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, trata
 
 #mascota
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(10, 'luna', 'perro', 'labrador', '2019-03-03', 9111111),
-(11, 'sulu', 'perro', 'rhodesian', '2017-10-10', 9111111),
-(12, 'shira', 'perro', 'rhodesian', '2018-03-26', 9111111),
-(13, 'kratos', 'perro', 'golden retriever', '2019-04-14', 8823456),
-(14, 'linda', 'perro', 'golden retriever', '2019-05-23', 8823456);
+(10, 'luna', 'Perro', 'labrador', '2019-03-03', 9111111),
+(11, 'sulu', 'Perro', 'rhodesian', '2017-10-10', 9111111),
+(12, 'shira', 'Perro', 'rhodesian', '2018-03-26', 9111111),
+(13, 'kratos', 'Perro', 'golden retriever', '2019-04-14', 8823456),
+(14, 'linda', 'Perro', 'golden retriever', '2019-05-23', 8823456);
 
 #provee
 insert into provee(id_Producto, id_Proveedor, cantidad) values
@@ -321,11 +321,11 @@ insert into dueño(ciDueño, direccion) values
 
 #mascota
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(35, 'Rex', 'perro', 'Labrador Retriever', '2020-04-05', 3111111),
-(36, 'Luna', 'gato', 'Siames', '2017-09-15', 4215512),
-(37, 'Bobby', 'perro', 'Golden Retriever', '2019-01-16', 3326514),
-(38, 'Nibbles', 'gato', 'Persa', '2018-03-22', 4132112),
-(39, 'Whiskers', 'conejo', 'Mini lop', '2020-01-30', 2321113);
+(35, 'Rex', 'Perro', 'Labrador Retriever', '2020-04-05', 3111111),
+(36, 'Luna', 'Gato', 'Siames', '2017-09-15', 4215512),
+(37, 'Bobby', 'Perro', 'Golden Retriever', '2019-01-16', 3326514),
+(38, 'Nibbles', 'Gato', 'Persa', '2018-03-22', 4132112),
+(39, 'Whiskers', 'Conejo', 'Mini lop', '2020-01-30', 2321113);
 
 #atiende
 insert into atiende(idMascota, ciMedico) values
@@ -358,7 +358,7 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 #producto
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
 (31, 'Casa para conejos', 'Resistente', 50, 7),
-(32, 'Rascador para gato', 'Rascador resistente para gatos', 22.95, 18),
+(32, 'Rascador para Gato', 'Rascador resistente para gatos', 22.95, 18),
 (33, 'Arnés para perros', 'Arnés ajustable para paseos cómodos', 19, 15),
 (34, 'Arenero', 'Arenero reutilizable', 30.03, 10),
 (35, 'Juguete de ratón', 'Juguete de peluche con sonido', 124.99, 6);
@@ -433,8 +433,8 @@ insert into atiende(idMascota, ciMedico) values
 insert into diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) values
 (216, '2023-03-01', 'Infección en el oído derecho', 'Limpieza del oído y prescripción de antibióticos tópicos', 'Se instruye al propietario sobre la administración de medicamentos y la importancia de mantener el oído limpio y seco'),
 (217, '2023-03-10', 'Alergia a las pulgas', 'Tratamiento antipulgas, medicamentos antihistamínicos y champú especial', 'Se aconseja al dueño sobre la prevención de pulgas y cuidados continuos de la piel'),
-(218, '2023-04-15', 'Radiografía que revela una fractura en la pata trasera del perro', 'Reducción de la fractura y colocación de un yeso', 'El propietario debe restringir la actividad del perro durante la recuperación '),
-(219, '2023-04-21', 'Análisis de orina muestra cristales en la orina del gato', 'Cirugía de extirpación y radioterapia', 'Se recomienda una dieta específica y se programan chequeos regulares'),
+(218, '2023-04-15', 'Radiografía que revela una fractura en la pata trasera del Perro', 'Reducción de la fractura y colocación de un yeso', 'El propietario debe restringir la actividad del Perro durante la recuperación '),
+(219, '2023-04-21', 'Análisis de orina muestra cristales en la orina del Gato', 'Cirugía de extirpación y radioterapia', 'Se recomienda una dieta específica y se programan chequeos regulares'),
 (220, '2023-05-13', 'Alergia a las pulgas', 'Tratamiento antipulgas, medicamentos antihistamínicos y champú especial', 'Se aconseja al dueño sobre la prevención de pulgas y cuidados continuos de la piel');
 
 
@@ -448,11 +448,11 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 
 #producto
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
-(24, 'Gotas Antibióticas', 'Oticas antibióticas para tratar la infección bacteriana en el oído de tu gato', 45.67, 70),
+(24, 'Gotas Antibióticas', 'Oticas antibióticas para tratar la infección bacteriana en el oído de tu Gato', 45.67, 70),
 (25, 'Analgesia', 'Aliviar el dolor y la incomodidad', 25.50, 150),
 (26, 'Antihistamínicos', 'Ayuda a aliviar los síntomas alérgicos en perros', 23.45, 45),
 (27, 'Antiinflamatorios no esteroides', 'Medicamentos como el carprofeno, el meloxicam o el firocoxib se utilizan para reducir la inflamación ', 27.50, 100),
-(28, 'Medicamentos antiinflamatorios', 'Si los cristales están causando irritación o inflamación en el tracto urinario del gato', 23.60, 50);
+(28, 'Medicamentos antiinflamatorios', 'Si los cristales están causando irritación o inflamación en el tracto urinario del Gato', 23.60, 50);
 
 #receta
 insert into receta(id_Diagnostico, id_Producto) values
@@ -596,11 +596,11 @@ insert into dueño(ciDueño, direccion) values
 
 #mascota
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(55, 'mimi', 'perro', 'chihuahua', '2017-03-11', 4021781),
-(56, 'dante', 'gato', 'siames', '2020-10-31', 6962120),
-(57, 'coki', 'perro', 'border collie', '2023-05-05', 4984222),
-(58, 'chimera', 'perro', 'bichon maltes', '2021-07-10', 5291354),
-(59, 'lily', 'gato', 'persa', '2016-09-21', 3045707);
+(55, 'mimi', 'Perro', 'chihuahua', '2017-03-11', 4021781),
+(56, 'dante', 'Gato', 'siames', '2020-10-31', 6962120),
+(57, 'coki', 'Perro', 'border collie', '2023-05-05', 4984222),
+(58, 'chimera', 'Perro', 'bichon maltes', '2021-07-10', 5291354),
+(59, 'lily', 'Gato', 'persa', '2016-09-21', 3045707);
 
 
 ####-
@@ -695,11 +695,11 @@ insert into dueño(ciDueño, direccion) values
 
 #mascota
 insert into mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) values
-(1001, 'Spiky', 'perro', 'chapi', '2015-03-11', 9832342),
-(1002, 'Sherkan', 'gato', 'persa', '2019-10-01', 7374234),
-(1003, 'Alvin', 'perro', 'golden retriever', '2010-07-10', 9992885),
-(1004, 'Perlita', 'perro', 'husky', '2018-11-10', 8234567),
-(1005, 'misifus', 'gato', 'persa', '2021-03-16', 9992990);
+(1001, 'Spiky', 'Perro', 'chapi', '2015-03-11', 9832342),
+(1002, 'Sherkan', 'Gato', 'persa', '2019-10-01', 7374234),
+(1003, 'Alvin', 'Perro', 'golden retriever', '2010-07-10', 9992885),
+(1004, 'Perlita', 'Perro', 'husky', '2018-11-10', 8234567),
+(1005, 'misifus', 'Gato', 'persa', '2021-03-16', 9992990);
 
 
 #atiende
