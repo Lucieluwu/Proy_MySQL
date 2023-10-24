@@ -764,3 +764,87 @@ insert into provee(id_Producto, id_Proveedor, cantidad) values
 (256, 406, 50),
 (257, 407, 15),
 (258, 408, 5);
+
+-- Marcelo
+
+#persona
+INSERT INTO persona(ci, nombres, apepaterno, apematerno, sexo, fecha_de_nacimiento, correo, telefono) VALUES
+(8294788, 'Juan', 'Pérez', 'García', 'M', '1995-03-15', 'juanperez@gmail.com', 67284693),
+(12662494, 'Ana', 'López', 'Rodríguez', 'F', '1998-07-20', 'analopez@gmail.com', 75896314),
+(9929929, 'Carlos', 'Martínez', 'Sánchez', 'M', '2000-01-10', 'carlosmartinez@gmail.com', 72564985),
+(13346779, 'Elena', 'Gómez', 'Hernández', 'F', '1999-05-05', 'elenagomez@gmail.com', 77898246),
+(12296676, 'Luis', 'Fernández', 'Jiménez', 'M', '1997-12-25', 'luisfernandez@gmail.com', 65432336);
+
+#medico
+insert into medico(ciMedico, especialidad, sueldo) values
+(9929929, 'Medicina Interna', 2500),
+(12296676, 'Cirugia Veterinaria', 4000),
+(8294788, 'Medicina Interna', 4000);
+
+#dueño
+insert into dueño(ciDueño, direccion) values
+(8294788, 'Calle costanera'),
+(12662494, 'Mrs. Santa Cruz'),
+(9929929, 'Alto San Antonio'),
+(13346779, 'Villa copabana');
+
+
+#mascota
+INSERT INTO mascota(idMascota, nombre, especie, raza, fecha_de_nacimiento, ciDueño) VALUES
+(60, 'Rocky', 'perro', 'Pastor Alemán', '2019-08-10', 8294788),
+(61, 'Hopper', 'conejo', 'Holandés Enano', '2019-02-14', 12662494),
+(62, 'Coco', 'perro', 'Chihuahua', '2020-03-12', 9929929),
+(63, 'Smokey', 'gato', 'Maine Coon', '2017-12-01', 13346779);
+
+#atiende
+insert into atiende(idMascota, ciMedico) values
+(60, 9929929),
+(61, 8294788),
+(62, 12296676),
+(63, 9929929),
+(62, 8294788),
+(60, 9929929),
+(61, 8294788);
+
+
+#diagnostico
+INSERT INTO diagnostico(id_Diagnostico, fecha_de_diagnostico, diagnostico, tratamiento, observaciones) VALUES
+(1015, '2023-02-18', 'Fiebre', 'Antipiréticos y reposo', 'Vigilar la temperatura corporal'),
+(1016, '2023-03-20', 'Fractura de pata', 'Inmovilización y seguimiento', 'Revisar el estado de la fractura regularmente'),
+(1017, '2022-02-20', 'Hemorragia', 'Cirugia urgente', 'Ejecucion de la cirugia'),
+(1018, '2022-06-17', 'Gastritis', 'Antiácidos y dieta suave', 'No dar comida picante o irritante'),
+(1019, '2022-07-19', 'Parásitos intestinales', 'Desparasitantes y seguimiento', 'Administrar el tratamiento según las indicaciones del veterinario'),
+(1020, '2022-08-21', 'Problemas de comportamiento', 'Terapia de modificación de conducta', 'Seguir el plan de terapia para el dueño'),
+(1021, '2022-07-18', 'Infección de oído', 'limpieza', 'Mantener el oído limpio y seco');
+
+#asigna
+insert into asigna(idMascota, ciMedico, id_Diagnostico) values
+(60, 9929929, 1015),
+(61, 8294788, 1016),
+(62, 12296676, 1017),
+(63, 9929929, 1018),
+(62, 8294788, 1019),
+(60, 9929929, 1020),
+(61, 8294788, 1021);
+
+#producto
+insert into producto(id_Producto, nombre, descripcion, precio, stock) values
+(50, 'Antiacido ', 'Efectivo para mascotas', 5, 7),
+(51, 'Desparasitador', 'Dar en dosis pequeñas cada 8 horas', 30, 20),
+(52, 'Antirrabico', 'capsula antirrabica', 50, 30);
+
+#receta
+insert into receta(id_Diagnostico, id_Producto) values
+(1018, 50),
+(1019, 51);
+
+#provee
+insert into provee(id_Producto, id_Proveedor, cantidad) values
+(50, 131, 5),
+(51, 132, 10),
+(52, 131, 20);
+
+#provee
+insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
+(131, 'Farmacos la curandera', '2458693', 'noreply@farmaciacurandera.com'),
+(132, 'GRUPO BAYTER SRL', '2236998', 'noreply@asocbayter.com');
