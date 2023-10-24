@@ -829,22 +829,22 @@ insert into asigna(idMascota, ciMedico, id_Diagnostico) values
 
 #producto
 insert into producto(id_Producto, nombre, descripcion, precio, stock) values
-(50, 'Antiacido ', 'Efectivo para mascotas', 5, 7),
-(51, 'Desparasitador', 'Dar en dosis pequeñas cada 8 horas', 30, 20),
-(52, 'Antirrabico', 'capsula antirrabica', 50, 30);
+(60, 'Antiacido ', 'Efectivo para mascotas', 5, 7),
+(61, 'Desparasitador', 'Dar en dosis pequeñas cada 8 horas', 30, 20),
+(62, 'Antirrabico', 'capsula antirrabica', 50, 30);
 
 #receta
 insert into receta(id_Diagnostico, id_Producto) values
-(1018, 50),
-(1019, 51);
-
-#provee
-insert into provee(id_Producto, id_Proveedor, cantidad) values
-(50, 131, 5),
-(51, 132, 10),
-(52, 131, 20);
+(1018, 60),
+(1019, 61);
 
 #provee
 insert into proveedor(id_Proveedor, nombreEmpresa, telefono, correo) values
 (131, 'Farmacos la curandera', '2458693', 'noreply@farmaciacurandera.com'),
 (132, 'GRUPO BAYTER SRL', '2236998', 'noreply@asocbayter.com');
+
+#provee
+insert into provee(id_Producto, id_Proveedor, cantidad) values
+(60, 131, 5),
+(61, 132, 10),
+(62, 131, 20);
